@@ -1,0 +1,22 @@
+<div>
+    <form>
+        <table>
+            <tr><td>
+            <md-form-field class="example-full-width">
+              <input mdInput placeholder="Email ID" class="md-24">
+            </md-form-field></td></tr>
+            <tr><td><md-form-field class="example-full-width">
+              <input mdInput placeholder="Password">
+            </md-form-field></td>
+          </tr>
+          <tr>
+            <td>
+              <button md-button (click)="btnClick();">Basic</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    <div>
+      <h6><a [routerLink]="['/login/forgot']">Forgot password?</a></h6>
+    </div>
+  </div>
