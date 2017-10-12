@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot.component.css']
 })
 export class ForgotComponent implements OnInit {
-
+  position = 'before';
   constructor() { }
 
   ngOnInit() {

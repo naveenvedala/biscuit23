@@ -7,16 +7,19 @@ import { LoginBaseComponent } from './login-base/login-base.component';
 import {
   MatInputModule, MdAutocompleteModule, MdButtonModule, MdButtonToggleModule,
   MdCardModule, MdCheckboxModule, MdChipsModule, MdDatepickerModule, MdDialogModule,
-  MdExpansionModule, MdGridListModule, MdIconModule, MdInputModule, MdListModule,
+  MdExpansionModule, MdGridListModule, MdInputModule, MdListModule,
   MdMenuModule, MdNativeDateModule, MdPaginatorModule, MdProgressBarModule,
   MdProgressSpinnerModule, MdRadioModule, MdRippleModule, MdSelectModule,
   MdSidenavModule, MdSliderModule, MdSlideToggleModule, MdSnackBarModule,
-  MdSortModule, MdTableModule, MdTabsModule, MdToolbarModule, MdTooltipModule, MdStepperModule,
+  MdSortModule, MdTableModule, MdTabsModule, MdToolbarModule, MdTooltipModule,
+  MdStepperModule,MdIconModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing, appRoutingProviders } from './app.routes';
 import { LoginComponent } from './login/login.component';
 import { ForgotComponent } from './forgot/forgot.component';
+import { BaseDashboardComponent } from './base-dashboard/base-dashboard.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -24,14 +27,20 @@ import { ForgotComponent } from './forgot/forgot.component';
     AppComponent,
     LoginBaseComponent,
     LoginComponent,
-    ForgotComponent
+    ForgotComponent,
+    BaseDashboardComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     MatInputModule,
     BrowserAnimationsModule,
     FormsModule,
+    MdButtonModule,
     ReactiveFormsModule,
+    MdCardModule,
+    MdIconModule,
+    MdTooltipModule,
     routing
   ],
   providers: [appRoutingProviders],

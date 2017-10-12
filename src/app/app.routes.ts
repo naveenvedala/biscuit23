@@ -15,6 +15,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginBaseComponent } from './login-base/login-base.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotComponent } from './forgot/forgot.component';
+import { BaseDashboardComponent } from './base-dashboard/base-dashboard.component'
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,6 +26,14 @@ export const routes: Routes = [
       { path: 'forgot', component: ForgotComponent }
     ]
   },
+  { path: 'dashboard', redirectTo: 'basicdashboard', pathMatch: 'full' },
+  {
+    path: 'basicdashboard', component: BaseDashboardComponent,
+    // children: [
+    //   { path: '', component: LoginComponent },
+    //   { path: 'forgot', component: ForgotComponent }
+    // ]
+  }
 
 ];
 
