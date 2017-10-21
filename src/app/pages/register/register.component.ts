@@ -45,5 +45,6 @@ export class RegisterComponent implements OnInit {
     signup(event) {
         let data = this.register.value;
         console.log(data)
+        this.register.reset();
     }
 }
