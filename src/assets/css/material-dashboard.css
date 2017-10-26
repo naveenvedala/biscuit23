@@ -7322,7 +7322,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 
 .login-page > .content,
 .lock-page > .content {
-  padding-top: 18vh; }
+  padding-top: 12vh; }
 
 .login-page .card-login {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);

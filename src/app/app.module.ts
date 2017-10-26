@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -14,6 +13,7 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { AppRoutes } from './app.routing';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -22,8 +22,7 @@ import { AppRoutes } from './app.routing';
         HttpModule,
         SidebarModule,
         NavbarModule,
-        FooterModule,
-        HttpClientModule
+        FooterModule
     ],
     declarations: [
         AppComponent,

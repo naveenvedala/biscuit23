@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { PagesRoutes } from './pages.routing';
 
@@ -18,7 +20,8 @@ import { LoginComponent } from './login/login.component';
         CommonModule,
         RouterModule.forChild(PagesRoutes),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     declarations: [
         LoginComponent,
