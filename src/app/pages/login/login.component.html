@@ -3,13 +3,17 @@
         <div class="card card-login card-hidden">
             <div class="card-header text-center" data-background-color="orange">
                 <img src="../../../assets/img/logo.png" class="card-title logo" />
-                <p class="color"> <span class="login">Login</span><br /><span class="amazed">To Be Amazed</span> </p>
+                <p class="color">
+                    <span class="login">Login</span>
+                    <br />
+                    <span class="amazed">To Be Amazed</span>
+                </p>
             </div>
             <div class="card-content">
                 <div class="input-group">
                     <span class="input-group-addon">
-                                            <i class="material-icons">email</i>
-                                        </span>
+                        <i class="material-icons">email</i>
+                    </span>
                     <div class="form-group label-floating">
                         <label class="control-label">Email / User Name</label>
                         <input type="text" class="form-control" formControlName="user">
@@ -17,8 +21,8 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
-                                            <i class="material-icons">lock_outline</i>
-                                        </span>
+                        <i class="material-icons">lock_outline</i>
+                    </span>
                     <div class="form-group label-floating">
                         <label class="control-label">Password</label>
                         <input type="password" class="form-control" formControlName="password">
@@ -26,18 +30,20 @@
                 </div>
             </div>
             <div class="footer text-center">
-                <button type="submit" class="btn btn-warning  btn-wd btn-lg" [disabled]="!login.valid" (click)="signin($event.target);">Let's go <i class="material-icons">send</i></button>
+                <button type="submit" class="btn btn-warning  btn-wd btn-lg" [disabled]="!login.valid" (click)="signin($event.target);">Let's go
+                    <i class="material-icons">send</i>
+                </button>
             </div>
             <div class="footer text-center">
                 <button type="button" class="btn btn-rose btn-simple">
-                  <a href="/pages/register">
-                    <i class="material-icons">person_add</i> Register
-                  </a>
+                    <a href="auth/register">
+                        <i class="material-icons">person_add</i> Register
+                    </a>
                 </button>
                 <button type="button" class="btn btn-rose btn-simple">
-                  <a href="/pages/forgot">
-                    <i class="material-icons">lock_open</i> Forgot Password
-                  </a>
+                    <a href="auth/forgot">
+                        <i class="material-icons">lock_open</i> Forgot Password
+                    </a>
                 </button>
             </div>
         </div>

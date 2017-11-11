@@ -33,10 +33,10 @@ export const ROUTES: RouteInfo[] = [
 
     { path: '/calendar', title: 'Calendar', icon:'material-icons' },
 
-    { path: '/pages/pricing', title: 'Pricing', icon:'material-icons' },
-    { path: '/pages/login', title: 'Login Page', icon:'material-icons' },
-    { path: '/pages/register', title: 'Register Page', icon:'material-icons' },
-    { path: '/pages/lock', title: 'Lock Screen Page', icon:'material-icons' },
+    { path: '/auth/forgot', title: 'Pricing', icon:'material-icons' },
+    { path: '/auth/login', title: 'Login Page', icon:'material-icons' },
+    { path: '/auth/register', title: 'Register Page', icon:'material-icons' },
+    { path: '/auth/setpassword', title: 'Lock Screen Page', icon:'material-icons' },
 
 
 

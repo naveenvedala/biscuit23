@@ -1,7 +1,7 @@
 <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-    <form method="#" action="#">
+    <form [formGroup]="forgot">
         <div class="card card-login card-hidden">
-            <div class="card-header text-center" data-background-color="blue">
+            <div class="card-header text-center" data-background-color="">
                 <img src="../../../assets/img/logo.png" class="card-title logo" />
                 <p class="color"> <span class="amazed">Forgot Password</span><br /><span class="login">Don't worry</span> </p>
             </div>
@@ -12,25 +12,33 @@
                     <span class="input-group-addon">
                                             <i class="material-icons">email</i>
                                         </span>
-                    <div class="form-group label-floating">
+                    <div class="form-group label-floating" [ngClass]="{'has-success':uf, 'has-error':ef}">
                         <label class="control-label">Email address</label>
-                        <input type="email" class="form-control">
+                        <input type="text" class="form-control" formControlName="email" (blur)="check('email')">
+                        <span class="material-icons form-control-feedback" *ngIf="uf">done</span>
+                        <span class="material-icons form-control-feedback" *ngIf="ef">clear</span>
+                        <small class="text-danger" *ngIf="forgot.get('email').touched && forgot.get('email').hasError('email')">
+                          * Email is Required *
+                        </small>
+                        <small class="text-danger" *ngIf="ef">
+                          * Email is not with Us *
+                        </small>
                     </div>
                 </div>
 
 
             </div>
             <div class="footer text-center">
-                <button type="submit" class="btn btn-rose btn-simple btn-wd btn-lg">Let's go <i class="material-icons">send</i></button>
+                <button type="submit" class="btn btn-default btn-wd btn-lg" [disabled]="btn || ef" (click)="generateMail()">Let's go <i class="material-icons">send</i></button>
             </div>
             <div class="footer text-center">
-                <button type="button" class="btn btn-rose btn-simple">
-                  <a href="/pages/login">
+                <button type="button" class="btn btn-defalut btn-simple">
+                  <a href="/auth/login">
                     <i class="material-icons">fingerprint</i> Login
                   </a>
                 </button>
-                <button type="button" class="btn btn-rose btn-simple">
-                  <a href="/pages/register">
+                <button type="button" class="btn btn-default btn-simple">
+                  <a href="/auth/register">
                     <i class="material-icons">person_add</i> Register
                   </a>
                 </button>

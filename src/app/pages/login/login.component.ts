@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { RestService } from '../../common/rest.service';
+import { CommonService } from '../../common/common.service'
+import { Router } from '@angular/router';
 
 
 declare var $: any;
@@ -8,27 +11,17 @@ declare var $: any;
     moduleId: module.id,
     selector: 'login-cmp',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
+    styleUrls: ['./login.component.css'],
+    providers: [RestService, CommonService]
 })
 
 export class LoginComponent implements OnInit {
     test: Date = new Date();
     login: FormGroup;
 
-    constructor(private fB: FormBuilder) { }
+    constructor(private fB: FormBuilder, private restSrc: RestService, private commonSvc: CommonService, private router: Router) { }
 
-    checkFullPageBackgroundImage() {
-        var $page = $('.full-page');
-        var image_src = $page.data('image');
-
-        if (image_src !== undefined) {
-            var image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
-            $page.append(image_container);
-        }
-    };
     ngOnInit() {
-        this.checkFullPageBackgroundImage();
-
         setTimeout(function() {
             // after 1000 ms we add the class animated to the login/register card
             $('.card').removeClass('card-hidden');
@@ -41,8 +34,14 @@ export class LoginComponent implements OnInit {
     }
 
     signin(event) {
-        let data = this.login.value;
-        console.log(data)
-
+        const data = this.login.value;
+        this.restSrc.signin(data).subscribe(result => {
+            if (result.status === 0) {
+                return this.commonSvc.showNotification('top', 'right', 'danger', 'Invalid Credentials');
+            }
+            this.commonSvc.lsWrite('user', result.data.data);
+            this.commonSvc.lsWrite('auth', result.data.auth);
+            this.router.navigate(['/dashboard']);
+        });
     }
 }

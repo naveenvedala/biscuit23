@@ -6,7 +6,7 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'auth/login',
         pathMatch: 'full',
     },
     {
@@ -47,10 +47,10 @@ export const AppRoutes: Routes = [
         ]
     },
     {
-        path: '',
+        path: 'auth',
         component: AuthLayoutComponent,
         children: [{
-            path: 'pages',
+            path: '',
             loadChildren: './pages/pages.module#PagesModule'
         }]
     }
